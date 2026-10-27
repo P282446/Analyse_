@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Analyse des saccades et des fixations du regard d'un sujet.
-
-Traduction Python du script R d'origine.
-
 Usage :
     python analyse_saccades.py chemin/vers/fichier.csv
 

@@ -104,8 +104,6 @@ Les résultats sont enregistrés dans le même répertoire que le fichier d'entr
 
 Ces résultats permettent d'étudier le comportement oculaire du psychologue et de le comparer à celui du sujet.
 
-**Remarque :** si les résultats des deux analyses sont enregistrés dans le même dossier, vérifiez que le nom `proportion_saccades.png` n'entraîne pas l'écrasement du graphique précédent. Il est préférable de conserver les sorties dans des dossiers distincts ou d'adapter les noms de fichiers.
-
 ## 6. Synchronisation des fixations avec la transcription
 
 Le programme `ana_trans.py` permet de synchroniser les données oculométriques du sujet et du psychologue avec les tours de parole de l'entretien.

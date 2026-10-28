@@ -260,7 +260,7 @@ def main():
     anv_sujet.to_csv(chemin_anv, index=False, encoding="utf-8")
 
     # Graphe des saccades
-    graphe_saccades(anv_sujet, os.path.join(out_dir, "proportion_saccades.png"))
+    graphe_saccades(anv_sujet, os.path.join(out_dir, "proportion_saccades_sujet.png"))
 
     # Fixations
     recap_fix = calculer_fixations(anv_sujet, pos_inter, pos_intra)

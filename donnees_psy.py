@@ -30,7 +30,7 @@ import pandas as pd
 # ------------------------------------------------------------------------------
 # Paramètres
 # ------------------------------------------------------------------------------
-COLONNES_UTILES = ["Frame", "Capture.Time", "Lft.X.Pos", "Lft.Y.Pos", "region"]
+COLONNES_UTILES = ["Frame", "Capture.Time", "Lft.X.Pos", "Lft.Y.Pos", "region", "type_absence"]
 
 TITRE_TEMPS = "Répartition du temps de regard du Psy par zone"
 TITRE_NB_FIX = "Nombre de fixations du Psy par zone"

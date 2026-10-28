@@ -18,8 +18,8 @@ Le pipeline est composé de trois programmes :
 
 | Programme | Fonction |
 |---|---|
-| `anv_sujet.py` | Analyse des fixations et des saccades du sujet. |
-| `anv_psy.py` | Analyse des fixations et des saccades du psychologue. |
+| `donnees_sujet.py` | Analyse des fixations et des saccades du sujet. |
+| `donnees_psy.py` | Analyse des fixations et des saccades du psychologue. |
 | `ana_trans.py` | Synchronisation des données oculométriques avec les données de transcription. |
 
 Les deux premiers programmes produisent des fichiers enrichis contenant les informations relatives aux régions de regard et aux types de saccades. Le troisième utilise ces fichiers et la transcription de l'entretien pour construire un jeu de données synchronisé.
@@ -58,12 +58,12 @@ Les bibliothèques utilisées sont :
 
 ## 4. Analyse des fixations du sujet
 
-Le programme `anv_sujet.py` permet d'analyser les données oculométriques du sujet, notamment la répartition du regard entre les régions d'intérêt et les caractéristiques des saccades.
+Le programme `donnees_sujet.py` permet d'analyser les données oculométriques du sujet, notamment la répartition du regard entre les régions d'intérêt et les caractéristiques des saccades.
 
 ### 4.1. Utilisation
 
 ```bash
-python anv_sujet.py chemin/vers/fichier.csv
+python donnees_sujet.py chemin/vers/fichier.csv
 ```
 
 Remplacez `chemin/vers/fichier.csv` par le chemin du fichier CSV contenant les données oculométriques du sujet.
@@ -82,12 +82,12 @@ Ces résultats permettent de caractériser le comportement oculaire du sujet et 
 
 ## 5. Analyse des fixations du psychologue
 
-Le programme `anv_psy.py` réalise une analyse similaire à celle du sujet, mais appliquée aux données oculométriques du psychologue.
+Le programme `donnees_psy.py` réalise une analyse similaire à celle du sujet, mais appliquée aux données oculométriques du psychologue.
 
 ### 5.1. Utilisation
 
 ```bash
-python anv_psy.py chemin/vers/fichier.csv
+python donnees_psy.py chemin/vers/fichier.csv
 ```
 
 Remplacez `chemin/vers/fichier.csv` par le chemin du fichier contenant les données oculométriques du psychologue.

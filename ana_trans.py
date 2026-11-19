@@ -127,7 +127,7 @@ def lire_regard(chemin, nom):
     """Lit un fichier anv_psy / anv_sujet."""
     df = lire_table(chemin, header=0)
     df.columns = [str(c).strip().replace(" ", ".") for c in df.columns]
-    manquantes = [c for c in ("Capture.Time", "region", "saccade") if c not in df.columns]
+    manquantes = [c for c in ("Capture Time", "region", "saccade") if c not in df.columns]
     if manquantes:
         sys.exit(f"{os.path.basename(chemin)} : colonnes introuvables {manquantes}\n"
                  f"Colonnes disponibles : {list(df.columns)}")
@@ -213,7 +213,7 @@ def construire_frise(regard, trans, regardeur, locuteurs, decalage, inclure_sile
         sys.exit(f"Aucune parole trouvée pour les locuteurs {locuteurs} dans la transcription.")
 
     # 2) Échantillons de regard : chacun couvre [t, t_suivant[
-    g = pd.DataFrame({"t": regard["Capture.Time"] / 1e6,
+    g = pd.DataFrame({"t": regard["Capture Time"] / 1e6,
                       "region": regard["region"],
                       "saccade": regard["saccade"]}).dropna(subset=["t"])
     g = (g.sort_values("t", kind="stable")
@@ -292,7 +292,7 @@ def construire_frise(regard, trans, regardeur, locuteurs, decalage, inclure_sile
 
 def types_absence_par_ligne(res, regard):
     """Types d'absence de ce regardeur dont l'échantillon tombe dans [debut_t, fin_t[."""
-    g = pd.DataFrame({"t": (regard["Capture.Time"] / 1e6).round(3),
+    g = pd.DataFrame({"t": (regard["Capture Time"] / 1e6).round(3),
                       "type": regard["type_absence"]}).dropna()
     g = g.sort_values("t", kind="stable")
     t = g["t"].to_numpy()

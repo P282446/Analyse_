@@ -26,7 +26,7 @@ import pandas as pd
 # ------------------------------------------------------------------------------
 # Paramètres
 # ------------------------------------------------------------------------------
-COLONNES_UTILES = ["Frame", "Capture.Time", "Lft.X.Pos", "Lft.Y.Pos", "region", "type_absence"]
+COLONNES_UTILES = ["Frame", "Capture Time", "Lft X Pos", "Lft Y Pos", "region", "type_absence"]
 
 TITRE_TEMPS = "Répartition du temps de regard du Sujet par zone"
 TITRE_NB_FIX = "Nombre de fixations du Sujet par zone"
@@ -132,7 +132,7 @@ def calculer_fixations(anv, pos_inter, pos_intra):
     pos = sorted(pos_inter + pos_intra)
     n_sac = len(pos)
     n_rows = len(anv)
-    temps = anv["Capture.Time"].to_numpy(dtype=float)
+    temps = anv["Capture Time"].to_numpy(dtype=float)
     regions = anv["region"].to_numpy(dtype=object)
 
     debut = np.zeros(n_sac + 1)

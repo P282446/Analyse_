@@ -109,16 +109,17 @@ def en_numerique(serie):
 
 
 def lire_transcription(chemin, sep=None):
-    """Retourne boc_trans : locuteur, debut, fin, duree, parole (trié par début)."""
+    """Retourne boc_trans : locuteur, debut, fin, parole (trié par début)."""
     X = lire_table(chemin, header=None, sep=sep)
-    if X.shape[1] < 9:
-        sys.exit(f"La transcription doit avoir au moins 9 colonnes "
+    if X.shape[1] < 8:
+        sys.exit(f"La transcription doit avoir au moins  colonnes "
                  f"(trouvées : {X.shape[1]}).")
-    t = X.iloc[:, [0, 3, 5, 7, 8]].copy()          # V1, V4, V6, V8, V9
-    t.columns = ["locuteur", "debut", "fin", "duree", "parole"]
-    for c in ["debut", "fin", "duree"]:
+    t = X.iloc[:, [2, 0, 1, 3 ]].copy()          
+    t.columns = ["locuteur", "debut", "fin", "parole"]
+    for c in ["debut", "fin"]:
         t[c] = en_numerique(t[c])
     t["locuteur"] = t["locuteur"].str.strip()
+    t["duree"] = t["fin"] - t["debut"]            # on ajoute la colonne duree
     t = t.dropna(subset=["debut"])                  # écarte aussi une éventuelle ligne d'en-tête
     return t.sort_values("debut", kind="stable").reset_index(drop=True)
 

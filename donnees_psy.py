@@ -277,7 +277,7 @@ def main():
 
     print(f"\nFichiers enregistrés dans : {out_dir}")
     print("  - anv_psy.csv")
-    print("  - proportion_saccades.png")
+    print("  - proportion_saccades_psy.png")
     print("  - comparaison_zones_psy.png")
 
 
